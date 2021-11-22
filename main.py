@@ -3,7 +3,7 @@ import json
 import telebot
 import time
 
-winning_urls = ['https://api.sofascore.com/api/v1/odds/1/winning/football','https://api.sofascore.com/api/v1/odds/1/winning/ice-hockey','https://api.sofascore.com/api/v1/odds/1/winning/volleyball','https://api.sofascore.com/api/v1/odds/1/winning/tennis','https://api.sofascore.com/api/v1/odds/1/winning/basketball']
+winning_urls = ['https://api.sofascore.com/api/v1/odds/1/winning/basketball']
 bot = telebot.TeleBot('1600740144:AAFpFngQxwH528CPMaZXPG_X-qmvvCgHjM4')
 cash = set()
 headers = {
@@ -45,7 +45,7 @@ while True:
                 if odd in cash:
                     pass
                 else:
-                    if actual-expected >= 40:
+                    if actual-expected >= 35:
                         value = list_of_events[f'{odd}']
                         bot.send_message(-1001627146030,f'{value}')
                         cash.add(odd)
